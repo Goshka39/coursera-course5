@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mod 1</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="LunchCheck">
+	<div ng-controller="LunchCheckController">
+		<input type="text" class="{{input_style}}" ng-model="lunch">
+		<input type="button" value="Check" ng-click="checkLunch()">
+		<div id="output" class="{{output_style}}">{{check_result}}</div>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.wrong-input {
+	border-color: red;
+}
+
+.right-input {
+	border-color: green;
+}
+
+.wrong-output {
+	color: red;
+}
+
+.right-output {
+	color: green;
+}
