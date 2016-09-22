@@ -37,7 +37,7 @@
     <div class="col-md-6" ng-controller="ToBuyShoppingController as list">
      <h2>What do you need to do:</h2>
      <ul>
-       <li ng-repeat="item in list.items">{{ item }} <button class="btn btn-default" ng-click="list.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Done!</button></li>
+       <li ng-repeat="item in list.items">{{ item.verb.todo }} {{ item.quantity }} {{ item.name }} <button class="btn btn-default" ng-click="list.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Done!</button></li>
      </ul>
      <div class="emptyMessage" ng-show="list.items.length==0">If you have any questions about weiqi(go) just pm me(AcidBee) on KGS!</div>
     </div>
@@ -46,7 +46,7 @@
     <div class="col-md-6" ng-controller="AlreadyBoughtShoppingController as list">
      <h2>Already Done:</h2>
      <ul>
-       <li ng-repeat="item in list.items">{{ item }}</li>
+       <li ng-repeat="item in list.items">{{ item.verb.done }} {{ item.quantity }} {{ item.name }}</li>
      </ul>
      <div class="emptyMessage" ng-show="list.items.length==0">I'm a weiqi newbie yet.</div>
     </div>

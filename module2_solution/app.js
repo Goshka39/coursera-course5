@@ -28,12 +28,18 @@ function AlreadyBoughtShoppingController(ShoppingListCheckOffService){
 function ShoppingListCheckOffService(){
 	var service = this;
 
+	var verbs = [
+		{todo: "Learn", done: "Learned"},
+		{todo: "Play", done: "Played"},
+		{todo: "Register", done: "Registered"},
+		{todo: "Watch", done: "Watched"}
+	]
 	var itemsToBuy = [
-		'Read the rules of weiqi',
-		'Download a bot - for example GnuGo', 
-		'Register on a server - http://gokgs.com', 
-		'(optional)Watch "Hikaru no Go"',
-		'Enjoy playing!'];
+		{verb: verbs[0], name: "rules", quantity: 7},		
+		{verb: verbs[1], name: "games with bot", quantity: 3}, 
+		{verb: verbs[2], name: "time", quantity: 1},
+		{verb: verbs[3], name: "series of 'Hikaru no Go'", quantity:72}
+	];
 	var boughtItems = [];
 
 	service.getItemsToBuy = function(){
