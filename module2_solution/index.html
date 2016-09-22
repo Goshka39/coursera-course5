@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: r0ed;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+      a {
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+<body>
+  <div class="container">
+  <h1>Weiqi start checklist</h1>
+  <div>Weiqi is an ancient board intellectual game I'm playing at. The rules of the game are fairly simple, but the game itself is much deeper than chess. It was <a href="https://deepmind.com/research/alphago/">kind of solved</a> only this year by such a monster like google. Probably you've never heard of it ot thought that it's to difficult to start, but it's quite easy to dive in, just follow the check list:</div>
+  <div class="row">
+    
+    <!-- To Buy List -->
+    <div class="col-md-6" ng-controller="ToBuyShoppingController as list">
+     <h2>What do you need to do:</h2>
+     <ul>
+       <li ng-repeat="item in list.items">{{ item }} <button class="btn btn-default" ng-click="list.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Done!</button></li>
+     </ul>
+     <div class="emptyMessage" ng-show="list.items.length==0">If you have any questions about weiqi(go) just pm me(AcidBee) on KGS!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6" ng-controller="AlreadyBoughtShoppingController as list">
+     <h2>Already Done:</h2>
+     <ul>
+       <li ng-repeat="item in list.items">{{ item }}</li>
+     </ul>
+     <div class="emptyMessage" ng-show="list.items.length==0">I'm a weiqi newbie yet.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
